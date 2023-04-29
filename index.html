@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.1/full/pyodide.js"></script>
+  </head>
+  <body>
+    Pyodide test page <br />
+    Open your browser console to see Pyodide output
+    <script type="text/javascript">
+      let nrt_module, example_module;
+      let pyodide;
+      let micropip;
+      window.global_functions = {};
+      async function main() {
+        pyodide = await loadPyodide();
+        await pyodide.loadPackage("micropip");
+        await pyodide.loadPackage("numpy");
+
+        micropip = await pyodide.pyimport("micropip");
+        await micropip.install(
+          "./numba_wasm/dist/numba_wasm-0.1.0-py3-none-any.whl"
+        );
+
+        nrt_module = await pyodide._module.loadWebAssemblyModule(
+          new Uint8Array(await (await fetch("nrt.wasm")).arrayBuffer()),
+          {
+            loadAsync: true,
+            nodelete: true,
+            allowUndefined: true,
+          }
+        );
+        example_module = await pyodide._module.loadWebAssemblyModule(
+          new Uint8Array(await (await fetch("out.wasm")).arrayBuffer()),
+          {
+            loadAsync: true,
+            nodelete: true,
+            allowUndefined: true,
+          }
+        );
+        pyodide._module.mergeLibSymbols(nrt_module, "NRT");
+        pyodide._module.mergeLibSymbols(example_module, "example_module");
+        nrt_module.NRT_MemSys_init();
+        global_functions = Object.assign(
+          global_functions,
+          nrt_module,
+          example_module
+        );
+      }
+      main().then(() => {
+        pyodide.runPython(
+          "import numba_wasm; print(numba_wasm.example_module.square(11.0)); print(numba_wasm.example_module.new_array_function())"
+        );
+      });
+    </script>
+  </body>
+</html>
