@@ -30,7 +30,18 @@ jobs:
         run: |
           cd ./numba_wasm/
           poetry run python ../main.py
-
+      - name: Setup Emscripten Toolchain
+        uses: mymindstorm/setup-emsdk@v12
+        with:
+          version: 3.1.37
+          actions-cache-folder: 'emsdk-cache'
+      - name: Build WASM from IR
+        run: |
+          emcc ./numba_wasm/out.ll -g -sSIDE_MODULE -s EXPORT_ALL=1 -o out.wasm
+      - name: Build Numba Runtime
+        run: |
+          git clone -b wasm-testing https://github.com/Lincoln-LM/numba.git
+          emcc ./numba/numba/core/runtime/nrt.cpp -g -sSIDE_MODULE -o nrt.wasm
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
