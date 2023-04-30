@@ -24,4 +24,5 @@ jobs:
           poetry install --no-root
       - name: Build python package
         run: |
+          cd ./numba_wasm/
           poetry run poetry build
