@@ -28,6 +28,7 @@ jobs:
           poetry run poetry build --format=wheel
       - name: Construct Numba IR
         run: |
+          cd ./numba_wasm/
           poetry run python main.py
 
       - name: Upload a Build Artifact
