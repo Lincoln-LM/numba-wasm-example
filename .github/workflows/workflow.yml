@@ -39,7 +39,7 @@ jobs:
       - name: Setup Github Pages Folder
         run: |
           mkdir build
-          cp ./numba_wasm/dist/numba_wasm-0.1.0.py3-none-any.whl ./build/
+          cp ./numba_wasm/dist/numba_wasm-0.1.0-py3-none-any.whl ./build/
           cp ./numba_wasm/out.ll ./build/
           cp ./out.wasm ./build/
           cp ./nrt.wasm ./build/
