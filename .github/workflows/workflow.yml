@@ -17,12 +17,23 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      - name: Install python dependencies
+      - name: Install Python Package Build Dependencies
         run: |
           pip install poetry
           cd ./numba_wasm/
           poetry install --no-root
-      - name: Build python package
+      - name: Build Python Package
         run: |
           cd ./numba_wasm/
-          poetry run poetry build
+          poetry run poetry build --format=wheel
+      - name: Construct Numba IR
+        run: |
+          python main.py
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          path: |
+            ./**/*.whl
+            ./**/*.ll
+            ./**/*.wasm
