@@ -19,7 +19,7 @@
 
         micropip = await pyodide.pyimport("micropip");
         await micropip.install(
-          "./numba_wasm/dist/numba_wasm-0.1.0-py3-none-any.whl"
+          "./numba_wasm-0.1.0-py3-none-any.whl"
         );
 
         // load NRT as it is a dependency of np.array using numba functions

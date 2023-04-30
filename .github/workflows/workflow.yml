@@ -1,27 +1,52 @@
-name: CI
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  workflow_dispatch:
-
+name: Build and Deploy
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: write
 jobs:
   build:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      - name: Install python dependencies
+      - name: Install Python Package Build Dependencies
         run: |
           pip install poetry
           cd ./numba_wasm/
           poetry install --no-root
-      - name: Build python package
+      - name: Build Python Package
         run: |
-          poetry run poetry build
+          cd ./numba_wasm/
+          poetry run poetry build --format=wheel
+      - name: Construct Numba IR
+        run: |
+          cd ./numba_wasm/
+          poetry run python ../main.py
+      - name: Setup Emscripten Toolchain
+        uses: mymindstorm/setup-emsdk@v12
+        with:
+          version: 3.1.37
+          actions-cache-folder: 'emsdk-cache'
+      - name: Build WASM from IR
+        run: |
+          emcc ./numba_wasm/out.ll -g -sSIDE_MODULE -s EXPORT_ALL=1 -o out.wasm
+      - name: Build Numba Runtime
+        run: |
+          git clone -b wasm-testing https://github.com/Lincoln-LM/numba.git
+          emcc ./numba/numba/core/runtime/nrt.cpp -g -sSIDE_MODULE -o nrt.wasm
+      - name: Setup Github Pages Folder
+        run: |
+          mkdir build
+          cp ./numba_wasm/dist/numba_wasm-0.1.0-py3-none-any.whl ./build/
+          cp ./numba_wasm/out.ll ./build/
+          cp ./out.wasm ./build/
+          cp ./nrt.wasm ./build/
+          cp ./index.html ./build/
+          cp ./LICENSE ./build/
+          cp ./README.md ./build/
+      - name: Deploy Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./build/
