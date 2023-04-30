@@ -49,3 +49,4 @@ jobs:
             ./**/*.whl
             ./**/*.ll
             ./**/*.wasm
+            !emsdk-cache/**/*
