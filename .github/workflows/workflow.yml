@@ -43,6 +43,9 @@ jobs:
           cp ./numba_wasm/out.ll ./build/
           cp ./out.wasm ./build/
           cp ./nrt.wasm ./build/
+          cp ./index.html ./build/
+          cp ./LICENSE ./build/
+          cp ./README.md ./build/
       - name: Deploy Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
