@@ -88,7 +88,17 @@ def create_cfunc_wrapper(self, library, fndesc, _env, _call_helper):
     fnty = self.call_conv.get_function_type(fndesc.restype, fndesc.argtypes)
     wrapper_callee = ir.Function(wrapper_module, fnty, fndesc.llvm_func_name)
 
-    ll_argtypes = [self.get_value_type(ty) for ty in fndesc.argtypes]
+    # If an argument is an array, it must be a pointer
+    ll_argtypes = []
+    arg_pointer_flags = []
+    for arg_type in fndesc.argtypes:
+        if isinstance(arg_type, numba.core.types.npytypes.Array):
+            ll_argtypes.append(ir.PointerType(self.get_value_type(arg_type)))
+            arg_pointer_flags.append(True)
+        else:
+            ll_argtypes.append(self.get_value_type(arg_type))
+            arg_pointer_flags.append(False)
+
     ll_return_type = self.get_value_type(fndesc.restype)
 
     returns_array = isinstance(fndesc.restype, numba.core.types.npytypes.Array)
@@ -100,12 +110,21 @@ def create_cfunc_wrapper(self, library, fndesc, _env, _call_helper):
     wrapfn = ir.Function(wrapper_module, wrapty, fndesc.llvm_cfunc_wrapper_name)
     builder = ir.IRBuilder(wrapfn.append_basic_block("entry"))
 
+    args = []
+    for arg_type, arg_var, pointer_flag in zip(
+        ll_argtypes, wrapfn.args, arg_pointer_flags
+    ):
+        # derference pointer arguments
+        if pointer_flag:
+            arg_var = builder.load(arg_var)
+        args.append(arg_var)
+
     _status, result = self.call_conv.call_function(
         builder,
         wrapper_callee,
         fndesc.restype,
         fndesc.argtypes,
-        wrapfn.args,
+        args,
         attrs=("noinline",),
     )
 
