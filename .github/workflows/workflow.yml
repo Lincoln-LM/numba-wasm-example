@@ -29,7 +29,7 @@ jobs:
       - name: Construct Numba IR
         run: |
           cd ./numba_wasm/
-          poetry run python main.py
+          poetry run python ../main.py
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
