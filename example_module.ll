@@ -5,34 +5,34 @@ target triple = "x86_64-unknown-linux-gnu"
 
 @_ZN08NumbaEnv14example_module7example6squareB2v1B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEd = common global i8* null
 @_ZN08NumbaEnv5numba7cpython7numbers14int_power_impl12_3clocals_3e9int_powerB2v2B44c8tJTC_2fWQA9wW1DkAz0Pj1skAdT4gkkUlYBZmgA_3dEdi = common global i8* null
-@.const.picklebuf.139732081577536 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([186 x i8], [186 x i8]* @.const.pickledata.139732081577536, i32 0, i32 0), i32 186, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.139732081577536.sha1, i32 0, i32 0) }
-@.const.picklebuf.139732082096064 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([69 x i8], [69 x i8]* @.const.pickledata.139732082096064, i32 0, i32 0), i32 69, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.139732082096064.sha1, i32 0, i32 0) }
-@.const.pickledata.139732082096064 = internal constant [69 x i8] c"\80\04\95:\00\00\00\00\00\00\00\8C\08builtins\94\8C\11ZeroDivisionError\94\93\94\8C\10division by zero\94\85\94N\87\94."
-@.const.pickledata.139732082096064.sha1 = internal constant [20 x i8] c"\B2\80\08\A0\F8\8B\AD_\F0\F0$>\84\DA\B9\0C\AB\19\B3f"
-@.const.pickledata.139732081577536 = internal constant [186 x i8] c"\80\04\95\AF\00\00\00\00\00\00\00\8C\08builtins\94\8C\0DOverflowError\94\93\94)\8C\09int_power\94\8C{/home/runner/.cache/pypoetry/virtualenvs/example-module-R0WrUW6g-py3.9/lib/python3.9/site-packages/numba/cpython/numbers.py\94K\DE\87\94\87\94."
-@.const.pickledata.139732081577536.sha1 = internal constant [20 x i8] c"y\DA\E5\0E\F4\D6%f\1E\D2\E7\0D\B3\F2\C3\BC\8FW\B1\0B"
+@.const.picklebuf.140683749966336 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([186 x i8], [186 x i8]* @.const.pickledata.140683749966336, i32 0, i32 0), i32 186, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140683749966336.sha1, i32 0, i32 0) }
+@.const.picklebuf.140683750365504 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([69 x i8], [69 x i8]* @.const.pickledata.140683750365504, i32 0, i32 0), i32 69, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140683750365504.sha1, i32 0, i32 0) }
+@.const.pickledata.140683750365504 = internal constant [69 x i8] c"\80\04\95:\00\00\00\00\00\00\00\8C\08builtins\94\8C\11ZeroDivisionError\94\93\94\8C\10division by zero\94\85\94N\87\94."
+@.const.pickledata.140683750365504.sha1 = internal constant [20 x i8] c"\B2\80\08\A0\F8\8B\AD_\F0\F0$>\84\DA\B9\0C\AB\19\B3f"
+@.const.pickledata.140683749966336 = internal constant [186 x i8] c"\80\04\95\AF\00\00\00\00\00\00\00\8C\08builtins\94\8C\0DOverflowError\94\93\94)\8C\09int_power\94\8C{/home/runner/.cache/pypoetry/virtualenvs/example-module-R0WrUW6g-py3.9/lib/python3.9/site-packages/numba/cpython/numbers.py\94K\DE\87\94\87\94."
+@.const.pickledata.140683749966336.sha1 = internal constant [20 x i8] c"y\DA\E5\0E\F4\D6%f\1E\D2\E7\0D\B3\F2\C3\BC\8FW\B1\0B"
 @_ZN08NumbaEnv14example_module7example18new_array_functionB2v3B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj11ol_np_zeros12_3clocals_3e4implB2v4B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEi17class_28uint32_29 = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB2v5B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEi17class_28uint32_29 = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj15_call_allocatorB2v6B44c8tJTC_2fWQA9wW1DkAz0Pj1skAdT4gkkUlYBZmgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dEij = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v7B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dEij = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj18ol_array_zero_fill12_3clocals_3e4implB2v8B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE5ArrayIjLi1E1C7mutable7alignedE = common global i8* null
-@.const.picklebuf.139732081561024 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([81 x i8], [81 x i8]* @.const.pickledata.139732081561024, i32 0, i32 0), i32 81, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.139732081561024.sha1, i32 0, i32 0) }
-@.const.picklebuf.139732081577792 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([77 x i8], [77 x i8]* @.const.pickledata.139732081577792, i32 0, i32 0), i32 77, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.139732081577792.sha1, i32 0, i32 0) }
-@.const.picklebuf.139732081961536 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([137 x i8], [137 x i8]* @.const.pickledata.139732081961536, i32 0, i32 0), i32 137, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.139732081961536.sha1, i32 0, i32 0) }
-@.const.picklebuf.139732081068992 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([86 x i8], [86 x i8]* @.const.pickledata.139732081068992, i32 0, i32 0), i32 86, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.139732081068992.sha1, i32 0, i32 0) }
-@.const.pickledata.139732081068992 = internal constant [86 x i8] c"\80\04\95K\00\00\00\00\00\00\00\8C\08builtins\94\8C\0BMemoryError\94\93\94\8C'Allocation failed (probably too large).\94\85\94N\87\94."
-@.const.pickledata.139732081068992.sha1 = internal constant [20 x i8] c"\BA(\9D\81\F0\\p \F3G|\15sH\04\DFe\AB\E2\09"
-@.const.pickledata.139732081961536 = internal constant [137 x i8] c"\80\04\95~\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C[array is too big; `arr.size * arr.dtype.itemsize` is larger than the maximum possible size.\94\85\94N\87\94."
-@.const.pickledata.139732081961536.sha1 = internal constant [20 x i8] c"X\E1N\CC\B5\07\B1\E0 i\81t\02#\E6\85\CB\8C<W"
-@.const.pickledata.139732081577792 = internal constant [77 x i8] c"\80\04\95B\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C\1Fnegative dimensions not allowed\94\85\94N\87\94."
-@.const.pickledata.139732081577792.sha1 = internal constant [20 x i8] c"3\1B\85c\BD\B9\DA\C8\1B8B\22s\05,Ho\C1pk"
-@.const.pickledata.139732081561024 = internal constant [81 x i8] c"\80\04\95F\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C#Cannot safely convert value to intp\94\85\94N\87\94."
-@.const.pickledata.139732081561024.sha1 = internal constant [20 x i8] c"M\D0\A5\17S\C7\DCs\85\B2u\D9R\BDR\D8\A29\C2\FF"
+@.const.picklebuf.140683749962112 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([81 x i8], [81 x i8]* @.const.pickledata.140683749962112, i32 0, i32 0), i32 81, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140683749962112.sha1, i32 0, i32 0) }
+@.const.picklebuf.140683749966592 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([77 x i8], [77 x i8]* @.const.pickledata.140683749966592, i32 0, i32 0), i32 77, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140683749966592.sha1, i32 0, i32 0) }
+@.const.picklebuf.140683750364992 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([137 x i8], [137 x i8]* @.const.pickledata.140683750364992, i32 0, i32 0), i32 137, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140683750364992.sha1, i32 0, i32 0) }
+@.const.picklebuf.140683749316352 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([86 x i8], [86 x i8]* @.const.pickledata.140683749316352, i32 0, i32 0), i32 86, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140683749316352.sha1, i32 0, i32 0) }
+@.const.pickledata.140683749316352 = internal constant [86 x i8] c"\80\04\95K\00\00\00\00\00\00\00\8C\08builtins\94\8C\0BMemoryError\94\93\94\8C'Allocation failed (probably too large).\94\85\94N\87\94."
+@.const.pickledata.140683749316352.sha1 = internal constant [20 x i8] c"\BA(\9D\81\F0\\p \F3G|\15sH\04\DFe\AB\E2\09"
+@.const.pickledata.140683750364992 = internal constant [137 x i8] c"\80\04\95~\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C[array is too big; `arr.size * arr.dtype.itemsize` is larger than the maximum possible size.\94\85\94N\87\94."
+@.const.pickledata.140683750364992.sha1 = internal constant [20 x i8] c"X\E1N\CC\B5\07\B1\E0 i\81t\02#\E6\85\CB\8C<W"
+@.const.pickledata.140683749966592 = internal constant [77 x i8] c"\80\04\95B\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C\1Fnegative dimensions not allowed\94\85\94N\87\94."
+@.const.pickledata.140683749966592.sha1 = internal constant [20 x i8] c"3\1B\85c\BD\B9\DA\C8\1B8B\22s\05,Ho\C1pk"
+@.const.pickledata.140683749962112 = internal constant [81 x i8] c"\80\04\95F\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C#Cannot safely convert value to intp\94\85\94N\87\94."
+@.const.pickledata.140683749962112.sha1 = internal constant [20 x i8] c"M\D0\A5\17S\C7\DCs\85\B2u\D9R\BDR\D8\A29\C2\FF"
 @_ZN08NumbaEnv14example_module7example21modify_array_functionB2v9B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE5ArrayIjLi1E1C7mutable7alignedE = common global i8* null
 @_ZN08NumbaEnv14example_module7example29new_and_modify_array_functionB3v10B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE = common global i8* null
-@numba.dynamic.globals.7f15e90fc7c0 = linkonce global i8* inttoptr (i32 -384841792 to i8*)
-@numba.dynamic.globals.7f15e8f7a220 = linkonce global i8* inttoptr (i32 -386424288 to i8*)
+@numba.dynamic.globals.7ff37ceb47c0 = linkonce global i8* inttoptr (i32 2095794112 to i8*)
+@numba.dynamic.globals.7ff37cd31220 = linkonce global i8* inttoptr (i32 2094207520 to i8*)
 
 define i32 @_ZN14example_module7example6squareB2v1B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEd(double* noalias nocapture %retptr, { i8*, i32, i8* }** noalias nocapture %excinfo, double %arg.input_value) {
 entry:
@@ -85,16 +85,16 @@ entry:
   store i64 0, i64* %exp, align 8
   %try_state = alloca i32, align 4
   store i32 0, i32* %try_state, align 4
-  %exp.3 = alloca i64, align 8
-  store i64 0, i64* %exp.3, align 8
   %invert.2 = alloca i1, align 1
   store i1 false, i1* %invert.2, align 1
-  %exp.4 = alloca i64, align 8
-  store i64 0, i64* %exp.4, align 8
-  %a.1.2 = alloca double, align 8
-  store double 0.000000e+00, double* %a.1.2, align 8
+  %exp.3 = alloca i64, align 8
+  store i64 0, i64* %exp.3, align 8
   %r.2 = alloca double, align 8
   store double 0.000000e+00, double* %r.2, align 8
+  %a.1.2 = alloca double, align 8
+  store double 0.000000e+00, double* %a.1.2, align 8
+  %exp.4 = alloca i64, align 8
+  store i64 0, i64* %exp.4, align 8
   %r.3 = alloca double, align 8
   store double 0.000000e+00, double* %r.3, align 8
   store i32 %arg.b, i32* %b, align 4
@@ -131,23 +131,23 @@ B44:                                              ; preds = %B26
   store i32 0, i32* %b, align 4
   %.39 = load double, double* %a.1, align 8
   store double 0.000000e+00, double* %a.1, align 8
-  store { i8*, i32, i8* }* @.const.picklebuf.139732081577536, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140683749966336, { i8*, i32, i8* }** %excinfo, align 8
   store i32 0, i32* %try_state, align 4
   %.44 = load i32, i32* %try_state, align 4
   %.46 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
 
 B48:                                              ; preds = %B26
-  %.48 = load i64, i64* %exp, align 8
-  %.50 = load i64, i64* %exp.3, align 8
-  store i64 %.48, i64* %exp.3, align 8
-  %.52 = load i64, i64* %exp, align 8
-  store i64 0, i64* %exp, align 8
-  %.54 = load i1, i1* %invert, align 1
-  %.56 = load i1, i1* %invert.2, align 1
+  %.48 = load i1, i1* %invert, align 1
+  %.50 = load i1, i1* %invert.2, align 1
   store i1 true, i1* %invert.2, align 1
-  %.58 = load i1, i1* %invert, align 1
+  %.52 = load i1, i1* %invert, align 1
   store i1 false, i1* %invert, align 1
+  %.54 = load i64, i64* %exp, align 8
+  %.56 = load i64, i64* %exp.3, align 8
+  store i64 %.54, i64* %exp.3, align 8
+  %.58 = load i64, i64* %exp, align 8
+  store i64 0, i64* %exp, align 8
   br label %B106
 
 B98:                                              ; preds = %entry
@@ -160,17 +160,17 @@ B98:                                              ; preds = %entry
   br label %B106
 
 B106:                                             ; preds = %B98, %B48
-  %.68 = load i64, i64* %exp.3, align 8
-  %.70 = load i64, i64* %exp.4, align 8
-  store i64 %.68, i64* %exp.4, align 8
-  %.72 = load double, double* %a.1, align 8
-  %.74 = load double, double* %a.1.2, align 8
-  store double %.72, double* %a.1.2, align 8
-  %.76 = load double, double* %r, align 8
-  %.78 = load double, double* %r.2, align 8
-  store double %.76, double* %r.2, align 8
-  %.80 = load double, double* %r, align 8
+  %.68 = load double, double* %r, align 8
+  %.70 = load double, double* %r.2, align 8
+  store double %.68, double* %r.2, align 8
+  %.72 = load double, double* %r, align 8
   store double 0.000000e+00, double* %r, align 8
+  %.74 = load double, double* %a.1, align 8
+  %.76 = load double, double* %a.1.2, align 8
+  store double %.74, double* %a.1.2, align 8
+  %.78 = load i64, i64* %exp.3, align 8
+  %.80 = load i64, i64* %exp.4, align 8
+  store i64 %.78, i64* %exp.4, align 8
   %.82 = load i64, i64* %exp.3, align 8
   %.83 = sext i32 65536 to i64
   %.84 = icmp sgt i64 %.82, %.83
@@ -258,7 +258,7 @@ B184:                                             ; preds = %B172
   ret i32 0
 
 B176.if:                                          ; preds = %B176
-  store { i8*, i32, i8* }* @.const.picklebuf.139732082096064, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140683750365504, { i8*, i32, i8* }** %excinfo, align 8
   %.159 = load i32, i32* %try_state, align 4
   %.161 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
@@ -726,7 +726,7 @@ entry:
   br i1 %.6, label %B0.if, label %B0.endif, !prof !0
 
 B0.if:                                            ; preds = %entry
-  store { i8*, i32, i8* }* @.const.picklebuf.139732081561024, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140683749962112, { i8*, i32, i8* }** %excinfo, align 8
   store i32 0, i32* %try_state, align 4
   %.11 = load i32, i32* %try_state, align 4
   %.13 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
@@ -737,7 +737,7 @@ B0.endif:                                         ; preds = %entry
   br i1 %.15, label %B0.endif.if, label %B0.endif.endif, !prof !0
 
 B0.endif.if:                                      ; preds = %B0.endif
-  store { i8*, i32, i8* }* @.const.picklebuf.139732081577792, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140683749966592, { i8*, i32, i8* }** %excinfo, align 8
   %.18 = load i32, i32* %try_state, align 4
   %.20 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
@@ -755,7 +755,7 @@ B0.endif.endif:                                   ; preds = %B0.endif
   br i1 %.32, label %B0.endif.endif.if, label %B0.endif.endif.endif, !prof !0
 
 B0.endif.endif.if:                                ; preds = %B0.endif.endif
-  store { i8*, i32, i8* }* @.const.picklebuf.139732081961536, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140683750364992, { i8*, i32, i8* }** %excinfo, align 8
   %.35 = load i32, i32* %try_state, align 4
   %.37 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
@@ -780,7 +780,7 @@ B0.endif.endif.endif:                             ; preds = %B0.endif.endif
   br i1 %.8.i.i, label %B0.if.i.i, label %B0.endif.i.i, !prof !0
 
 B0.if.i.i:                                        ; preds = %B0.endif.endif.endif
-  store { i8*, i32, i8* }* @.const.picklebuf.139732081068992, { i8*, i32, i8* }** %excinfo.1.i, align 8, !alias.scope !14, !noalias !15
+  store { i8*, i32, i8* }* @.const.picklebuf.140683749316352, { i8*, i32, i8* }** %excinfo.1.i, align 8, !alias.scope !14, !noalias !15
   store i32 0, i32* %try_state.i.i, align 4, !noalias !10
   %.13.i.i = load i32, i32* %try_state.i.i, align 4, !noalias !10
   %.15.i.i = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo.1.i, align 8, !alias.scope !14, !noalias !15
@@ -1189,7 +1189,7 @@ entry:
   store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.43, align 8
   %excinfo.2 = alloca { i8*, i32, i8* }*, align 8
   store { i8*, i32, i8* }* null, { i8*, i32, i8* }** %excinfo.2, align 8
-  %.4 = load i8*, i8** @numba.dynamic.globals.7f15e90fc7c0, align 8
+  %.4 = load i8*, i8** @numba.dynamic.globals.7ff37ceb47c0, align 8
   store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.5, align 8
   %.9 = call i32 @_ZN14example_module7example18new_array_functionB2v3B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE({ i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.5, { i8*, i32, i8* }** %excinfo.1)
   %.10 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo.1, align 8
@@ -1230,7 +1230,7 @@ B0.if:                                            ; preds = %entry
   br i1 %.38, label %B0.if.if, label %B0.endif
 
 B0.endif:                                         ; preds = %B0.if, %entry
-  %.42 = load i8*, i8** @numba.dynamic.globals.7f15e8f7a220, align 8
+  %.42 = load i8*, i8** @numba.dynamic.globals.7ff37cd31220, align 8
   store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.43, align 8
   %extracted.meminfo = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 0
   %extracted.parent = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 1
