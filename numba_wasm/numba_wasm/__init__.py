@@ -1,3 +1,3 @@
-"""Helper module for calling numba-compiled WASM functions from python"""
+"""Helper module for building and calling numba-compiled WASM functions from python"""
 
-from . import util, example_module
+from . import util
