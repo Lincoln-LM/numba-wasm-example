@@ -159,6 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-out.ll
-out.wasm
+example_module.ll
+example_module.wasm
 nrt.wasm

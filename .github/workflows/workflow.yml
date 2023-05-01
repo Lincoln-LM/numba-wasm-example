@@ -10,28 +10,32 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.9"
       - name: Install Python Package Build Dependencies
         run: |
           pip install poetry
-          cd ./numba_wasm/
-          poetry install --no-root
-      - name: Build Python Package
+          cd ./example_module/
+          poetry install
+          cd ../numba_wasm/
+          poetry install
+      - name: Build Python Packages
         run: |
-          cd ./numba_wasm/
+          cd ./example_module/
+          poetry run poetry build --format=wheel
+          cd ../numba_wasm/
           poetry run poetry build --format=wheel
       - name: Construct Numba IR
         run: |
-          cd ./numba_wasm/
-          poetry run python ../main.py
+          cd ./example_module/
+          poetry run python ./build_numba_functions.py
       - name: Setup Emscripten Toolchain
         uses: mymindstorm/setup-emsdk@v12
         with:
           version: 3.1.37
-          actions-cache-folder: 'emsdk-cache'
+          actions-cache-folder: "emsdk-cache"
       - name: Build WASM from IR
         run: |
-          emcc ./numba_wasm/out.ll -g -sSIDE_MODULE -s EXPORT_ALL=1 -o out.wasm
+          emcc ./example_module/example_module.ll -g -sSIDE_MODULE -s EXPORT_ALL=1 -o example_module.wasm
       - name: Build Numba Runtime
         run: |
           git clone -b wasm-testing https://github.com/Lincoln-LM/numba.git
@@ -40,8 +44,9 @@ jobs:
         run: |
           mkdir build
           cp ./numba_wasm/dist/numba_wasm-0.1.0-py3-none-any.whl ./build/
-          cp ./numba_wasm/out.ll ./build/
-          cp ./out.wasm ./build/
+          cp ./example_module/dist/example_module-0.1.0-py3-none-any.whl ./build/
+          cp ./example_module/example_module.ll ./build/
+          cp ./example_module.wasm ./build/
           cp ./nrt.wasm ./build/
           cp ./index.html ./build/
           cp ./LICENSE ./build/

@@ -1,15 +1,16 @@
 [tool.poetry]
-name = "numba-wasm"
+name = "example-module"
 version = "0.1.0"
-description = "Helper module for building and calling numba-compiled WASM functions from python"
+description = "Example pyodide-compatible module with numba compiled functions"
 authors = ["lincoln-lm <73306575+Lincoln-LM@users.noreply.github.com>"]
 license = "GPL-3.0-only"
 readme = "README.md"
-packages = [{include = "numba_wasm"}]
+packages = [{include = "example_module"}]
 
 [tool.poetry.dependencies]
 python = ">= 3.9"
 numpy = "^1.23.5"
+numba_wasm = { path = "../numba_wasm/", develop = false }
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^2.17.3"

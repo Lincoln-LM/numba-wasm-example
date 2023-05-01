@@ -1,14 +1,98 @@
 """Utility functions"""
 
 import sys
+import os
 import typing
+from inspect import getmodule
+from copy import copy
 import ctypes
 import numpy as np
 
-if sys.platform == "emscripten":
+BUILD_WASM_IR = os.environ.get("BUILD_WASM_IR", "0") == "1"
+
+if sys.platform == "emscripten" and not BUILD_WASM_IR:
     import js
 else:
+    import numba
+    from numba.core.typing.asnumbatype import as_numba_type as _as_numba_type
+
     js = None
+
+if BUILD_WASM_IR:
+    from .wasm_compilation_util import *
+
+
+def as_numba_type(input_type):
+    """More robust version of numba's as_numba_type that allows np.ndarrays and np.dtype"""
+    try:
+        return _as_numba_type(input_type)
+    except numba.errors.TypingError as error:
+        # already a numba type
+        if isinstance(input_type, numba.types.Type):
+            return input_type
+        # np.ndarray
+        if input_type.__name__ == "ndarray":
+            # assumes np.ndarray[ndim, T]
+            return numba.types.Array(
+                numba.from_dtype(input_type.__args__[1]), input_type.__args__[0], "C"
+            )
+        # np.dtype
+        try:
+            return numba.from_dtype(input_type)
+        except numba.errors.TypingError as _error:
+            raise numba.errors.TypingError(
+                f"The numba type for {input_type=} is not known"
+            ) from error
+
+
+def njit_wasm(function=None, **kwargs):
+    """Decorator/Decorator factory which marks a function and compile as wasm-compatible njit.
+
+    Infers njit function signature from type annotations and thus requires them.
+
+    When applied in a regular interpreter, functions as regular numba njit.
+
+    When applied in a pyodide interpreter, functions as a wrapper around the pre-compiled wasm
+    equivalent.
+
+    When applied with sys.environ["BUILD_WASM_IR"] == "1", targets njit for wasm32.
+
+    Can be invoked as:
+
+    ```
+    @njit_wasm(**kwargs)
+    def foo()
+    ```
+
+    or
+
+    ```
+    @njit_wasm
+    def foo()
+    ```"""
+
+    def wrapper(func):
+        if sys.platform != "emscripten" or BUILD_WASM_IR:
+            # infer signature from annotations
+            function_annotations = copy(function.__annotations__)
+            return_type = as_numba_type(function_annotations.pop("return"))
+            argument_types = (
+                as_numba_type(value) for value in function_annotations.values()
+            )
+            signature = return_type(*argument_types)
+            if BUILD_WASM_IR:
+                kwargs["no_cpython_wrapper"] = True
+            return numba.njit(signature, **kwargs)(func)
+        return wasm_function(func)
+
+    if function is None:
+        # @njit_wasm(**kwargs)
+        # def foo()
+        return wrapper
+    else:
+        # @njit_wasm
+        # def foo()
+        return wrapper(function)
 
 
 class NumpyHolder:
@@ -27,7 +111,7 @@ def np_array_from_spec_pointer(
 ) -> np.ndarray:
     """Convert a specification pointer to an ndarray without copying the underlying data.
 
-    "aray_type" is expected to be an annotated np.ndarray type with the number of dimensions
+    "array_type" is expected to be an annotated np.ndarray type with the number of dimensions
     and item type specified.
 
     For example, a 2d array of float64 must be declared as np.ndarray[2, np.float64]."""
@@ -94,13 +178,15 @@ def wasm_function(func):
 
     For example, a 2d array of float64 must be declared as np.ndarray[2, np.float64]."""
     return_type = func.__annotations__["return"]
-    # functions which return arrays must have the ndarray created from the returned pointer
+    # functions that return arrays must have the ndarray created from the returned pointer
     if return_type.__name__ == "ndarray":
 
         def wrap(*args):
             # functions with array arguments must be converted to pointers
             inputs = convert_inputs(func, args)
-            result_pointer = getattr(js.global_functions, func.__name__)(*inputs)
+            result_pointer = getattr(
+                js.global_functions, f"{getmodule(func).__name__}.{func.__name__}"
+            )(*inputs)
             return np_array_from_spec_pointer(
                 result_pointer,
                 return_type,
@@ -111,6 +197,10 @@ def wasm_function(func):
         def wrap(*args):
             # ...
             inputs = convert_inputs(func, args)
-            return getattr(js.global_functions, func.__name__)(*inputs)
+            return getattr(
+                js.global_functions, f"{getmodule(func).__name__}.{func.__name__}"
+            )(*inputs)
+
+    wrap.py_func = func
 
     return wrap
