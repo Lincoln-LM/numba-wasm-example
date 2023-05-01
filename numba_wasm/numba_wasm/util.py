@@ -74,7 +74,7 @@ def njit_wasm(function=None, **kwargs):
     def wrapper(func):
         if sys.platform != "emscripten" or BUILD_WASM_IR:
             # infer signature from annotations
-            function_annotations = copy(function.__annotations__)
+            function_annotations = copy(func.__annotations__)
             return_type = as_numba_type(function_annotations.pop("return"))
             argument_types = (
                 as_numba_type(value) for value in function_annotations.values()
