@@ -54,17 +54,13 @@
       }
       setup_pyodide().then(() => {
         pyodide.runPython("import example_module");
-        console.log("square(11.0):");
-        pyodide.runPython("print(example_module.square(11.0))");
-        console.log("new_array_function():");
-        pyodide.runPython("print(example_module.new_array_function())");
-        console.log("modify_array_function(new_array_function()):");
+        pyodide.runPython('print(f"{example_module.square(11.0)=}")');
+        pyodide.runPython('print(f"{example_module.new_array_function()=}")');
         pyodide.runPython(
-          "print(example_module.modify_array_function(example_module.new_array_function()))"
+          'print(f"{example_module.modify_array_function(example_module.new_array_function())=}")'
         );
-        console.log("new_and_modify_array_function():");
         pyodide.runPython(
-          "print(example_module.new_and_modify_array_function())"
+          'print(f"{example_module.new_and_modify_array_function()=}")'
         );
       });
     </script>
