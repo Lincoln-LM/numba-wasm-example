@@ -9,7 +9,7 @@ The library provides a custom @njit_wasm decorator which handles both compiling 
 
 When called from a regular interpreter, the decorator acts mostly the same as the traditional numba.njit, with the exception that it infers the function signature from type annotations rather than relying on it being explicitly declared. This allows easier testing of compiled functions as you do not need to compile to wasm test in a pyodide environment to test simple things like logic.
 
-When called from a regular interpreter with the "BUILD_WASM_IR" environment variable set (ex. [build_numba_functions.py](./example_module/build_numba_functions.py)), the decorator compiles to LLVM IR targetted at a 32-bit memory system (with the help of [some patches to trick numba numba](./numba_wasm/numba_wasm/wasm_compilation_util.py)) in order to allow emscripten to compile it to wasm32.
+When called from a regular interpreter with the "BUILD_WASM_IR" environment variable set (ex. [build_numba_functions.py](./example_module/build_numba_functions.py)), the decorator compiles to LLVM IR targetted at a 32-bit memory system (with the help of [some patches to trick numba](./numba_wasm/numba_wasm/wasm_compilation_util.py)) in order to allow emscripten to compile it to wasm32.
 
 When called from a pyodide interpreter, the decorator ignores the actual contents of the function and instead interfaces with the appropriate compiled WebAssembly function, converting inputs to the format the compiled code expects (ex. arrays are converted into pointers when appropriate).
 
