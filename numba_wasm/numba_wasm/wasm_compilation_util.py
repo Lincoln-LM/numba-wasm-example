@@ -2,7 +2,7 @@
 Importing this module will rewrite constants to attempt to mock wasm32."""
 
 import sys
-from functools import partial
+from functools import partial, cached_property
 from inspect import getmodule
 
 import numba
@@ -175,7 +175,7 @@ class WASMContext(CPUContext):
 
 
 class WASMTarget(CPUTarget):
-    @utils.cached_property
+    @cached_property
     def _toplevel_target_context(self):
         return WASMContext(self.typing_context, self._target_name)
 
