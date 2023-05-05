@@ -57,6 +57,9 @@ def njit_wasm(function=None, **kwargs):
 
     When applied with sys.environ["BUILD_WASM_IR"] == "1", targets njit for wasm32.
 
+    If keyword ``symbol`` is specified, the default symbol name (module.function)
+    is overwritten with the specified string.
+
     Can be invoked as:
 
     ```
@@ -71,19 +74,26 @@ def njit_wasm(function=None, **kwargs):
     def foo()
     ```"""
 
+    symbol = kwargs.pop("symbol", None)
+
     def wrapper(func):
-        if sys.platform != "emscripten" or BUILD_WASM_IR:
-            # infer signature from annotations
-            function_annotations = copy(func.__annotations__)
-            return_type = as_numba_type(function_annotations.pop("return", numba.void))
-            argument_types = (
-                as_numba_type(value) for value in function_annotations.values()
-            )
-            signature = return_type(*argument_types)
-            if BUILD_WASM_IR:
-                kwargs["no_cpython_wrapper"] = True
-            return numba.njit(signature, **kwargs)(func)
-        return wasm_function(func)
+        # running in pyodide, wrap existing wasm function
+        if sys.platform == "emscripten" and not BUILD_WASM_IR:
+            return wasm_function(func, symbol=symbol)
+
+        # infer signature from annotations
+        function_annotations = copy(func.__annotations__)
+        return_type = as_numba_type(function_annotations.pop("return", numba.void))
+        argument_types = (
+            as_numba_type(value) for value in function_annotations.values()
+        )
+        signature = return_type(*argument_types)
+        if BUILD_WASM_IR:
+            kwargs["no_cpython_wrapper"] = True
+        dispatcher = numba.njit(signature, **kwargs)(func)
+        # TODO: this feels hacky
+        dispatcher.symbol = symbol
+        return dispatcher
 
     if function is None:
         # @njit_wasm(**kwargs)
@@ -167,8 +177,8 @@ def convert_inputs(func, args: tuple) -> tuple:
     )
 
 
-def wasm_function(func):
-    """Decorator for calling a WASM function from python.
+def wasm_function(function=None, symbol=None):
+    """Decorator/Decorator factory for calling a WASM function from python.
 
     This decorator assumes all the arguments of the function and return type are annotated
     appropriately.
@@ -176,31 +186,59 @@ def wasm_function(func):
     More specifically, the arrays must be marked as ndarrays with the proper amount of
     dimensions and item type.
 
-    For example, a 2d array of float64 must be declared as np.ndarray[2, np.float64]."""
-    return_type = func.__annotations__.get("return", np.void0)
-    # functions that return arrays must have the ndarray created from the returned pointer
-    if return_type.__name__ == "ndarray":
+    For example, a 2d array of float64 must be declared as np.ndarray[2, np.float64].
 
-        def wrap(*args):
-            # functions with array arguments must be converted to pointers
-            inputs = convert_inputs(func, args)
-            result_pointer = getattr(
-                js.global_functions, f"{getmodule(func).__name__}.{func.__name__}"
-            )(*inputs)
-            return np_array_from_spec_pointer(
-                result_pointer,
-                return_type,
-            )
+    If keyword ``symbol`` is specified, the default symbol name (module.function) is overwritten with the specified string.
 
+    Can be invoked as:
+
+    ```
+    @wasm_function(symbol="not_foo")
+    def foo()
+    ```
+
+    or
+
+    ```
+    @wasm_function
+    def foo()
+    ```"""
+
+    def wrapper(func):
+        return_type = func.__annotations__.get("return", np.void0)
+        # functions that return arrays must have the ndarray created from the returned pointer
+        if return_type.__name__ == "ndarray":
+
+            def wrap(*args):
+                # functions with array arguments must be converted to pointers
+                inputs = convert_inputs(func, args)
+                result_pointer = getattr(
+                    js.global_functions,
+                    symbol or f"{getmodule(func).__name__}.{func.__name__}",
+                )(*inputs)
+                return np_array_from_spec_pointer(
+                    result_pointer,
+                    return_type,
+                )
+
+        else:
+
+            def wrap(*args):
+                # ...
+                inputs = convert_inputs(func, args)
+                return getattr(
+                    js.global_functions, f"{getmodule(func).__name__}.{func.__name__}"
+                )(*inputs)
+
+        wrap.py_func = func
+
+        return wrap
+
+    if function is None:
+        # @wasm_function(**kwargs)
+        # def foo()
+        return wrapper
     else:
-
-        def wrap(*args):
-            # ...
-            inputs = convert_inputs(func, args)
-            return getattr(
-                js.global_functions, f"{getmodule(func).__name__}.{func.__name__}"
-            )(*inputs)
-
-    wrap.py_func = func
-
-    return wrap
+        # @wasm_function
+        # def foo()
+        return wrapper(function)

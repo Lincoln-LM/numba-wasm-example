@@ -67,6 +67,9 @@
         console.log("example_module.modify_array_in_place_function(a)");
         pyodide.runPython("example_module.modify_array_in_place_function(a)");
         pyodide.runPython('print(f"{a=}")');
+        pyodide.runPython(
+          'print(f"{example_module.specially_named_new_array_function()=}")'
+        );
       });
     </script>
   </body>

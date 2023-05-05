@@ -11,6 +11,7 @@ from example_module import (  # noqa: E402
     modify_array_function,
     modify_array_in_place_function,
     new_and_modify_array_function,
+    specially_named_new_array_function,
 )
 
 # pylint: enable=wrong-import-position
@@ -26,6 +27,7 @@ with open("example_module.ll", "w+", encoding="utf-8") as out_file:
                 modify_array_function,
                 modify_array_in_place_function,
                 new_and_modify_array_function,
+                specially_named_new_array_function,
             )
         )
     )

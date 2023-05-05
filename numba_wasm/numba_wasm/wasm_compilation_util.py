@@ -3,6 +3,7 @@ Importing this module will rewrite constants to attempt to mock wasm32."""
 
 import sys
 from functools import partial
+from inspect import getmodule
 
 import numba
 from llvmlite import ir
@@ -78,9 +79,6 @@ class PatchedJITCodeLibrary(codegen.JITCodeLibrary):
             _function_pass_manager, self._codegen
         )
 
-
-codegen.JITCodeLibrary = PatchedJITCodeLibrary
-codegen.JITCPUCodegen._library_class = PatchedJITCodeLibrary
 
 codegen.JITCodeLibrary = PatchedJITCodeLibrary
 codegen.JITCPUCodegen._library_class = PatchedJITCodeLibrary
@@ -219,6 +217,11 @@ def build_wasm_ir_module(njit_functions: tuple) -> str:
         # assume only 1 signature
         function_module = tuple(function.overloads.values())[0].library._final_module
         library.add_llvm_module(function_module)
+        # assign custom symbol
+        if function.symbol is not None:
+            library.get_function(
+                f"{getmodule(function).__name__}.{function.__name__}"
+            ).name = function.symbol
     library.finalize()
     return str(library._final_module)
 

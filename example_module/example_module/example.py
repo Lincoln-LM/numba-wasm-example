@@ -45,3 +45,16 @@ def new_and_modify_array_function() -> np.ndarray[1, np.uint32]:
     which calls previously defined functions"""
     array = new_array_function()
     return modify_array_function(array)
+
+
+@njit_wasm(symbol="specially_named_new_array_function")
+def specially_named_new_array_function() -> np.ndarray[1, np.uint32]:
+    """Basic array creation function"""
+    array = np.zeros(np.int32(5), np.uint32)
+    # arbitrary values
+    array[0] = 12345
+    array[1] = 23451
+    array[2] = 34512
+    array[3] = 45123
+    array[4] = 51234
+    return array
