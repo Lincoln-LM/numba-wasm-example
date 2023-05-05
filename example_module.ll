@@ -5,35 +5,36 @@ target triple = "x86_64-unknown-linux-gnu"
 
 @_ZN08NumbaEnv14example_module7example6squareB2v1B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEd = common global i8* null
 @_ZN08NumbaEnv5numba7cpython7numbers14int_power_impl12_3clocals_3e9int_powerB2v2B44c8tJTC_2fWQA9wW1DkAz0Pj1skAdT4gkkUlYBZmgA_3dEdi = common global i8* null
-@.const.picklebuf.140256302171648 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([186 x i8], [186 x i8]* @.const.pickledata.140256302171648, i32 0, i32 0), i32 186, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140256302171648.sha1, i32 0, i32 0) }
-@.const.picklebuf.140256302687744 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([69 x i8], [69 x i8]* @.const.pickledata.140256302687744, i32 0, i32 0), i32 69, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140256302687744.sha1, i32 0, i32 0) }
-@.const.pickledata.140256302687744 = internal constant [69 x i8] c"\80\04\95:\00\00\00\00\00\00\00\8C\08builtins\94\8C\11ZeroDivisionError\94\93\94\8C\10division by zero\94\85\94N\87\94."
-@.const.pickledata.140256302687744.sha1 = internal constant [20 x i8] c"\B2\80\08\A0\F8\8B\AD_\F0\F0$>\84\DA\B9\0C\AB\19\B3f"
-@.const.pickledata.140256302171648 = internal constant [186 x i8] c"\80\04\95\AF\00\00\00\00\00\00\00\8C\08builtins\94\8C\0DOverflowError\94\93\94)\8C\09int_power\94\8C{/home/runner/.cache/pypoetry/virtualenvs/example-module-R0WrUW6g-py3.9/lib/python3.9/site-packages/numba/cpython/numbers.py\94K\DE\87\94\87\94."
-@.const.pickledata.140256302171648.sha1 = internal constant [20 x i8] c"y\DA\E5\0E\F4\D6%f\1E\D2\E7\0D\B3\F2\C3\BC\8FW\B1\0B"
+@.const.picklebuf.140610863249280 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([186 x i8], [186 x i8]* @.const.pickledata.140610863249280, i32 0, i32 0), i32 186, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140610863249280.sha1, i32 0, i32 0) }
+@.const.picklebuf.140610863752960 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([69 x i8], [69 x i8]* @.const.pickledata.140610863752960, i32 0, i32 0), i32 69, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140610863752960.sha1, i32 0, i32 0) }
+@.const.pickledata.140610863752960 = internal constant [69 x i8] c"\80\04\95:\00\00\00\00\00\00\00\8C\08builtins\94\8C\11ZeroDivisionError\94\93\94\8C\10division by zero\94\85\94N\87\94."
+@.const.pickledata.140610863752960.sha1 = internal constant [20 x i8] c"\B2\80\08\A0\F8\8B\AD_\F0\F0$>\84\DA\B9\0C\AB\19\B3f"
+@.const.pickledata.140610863249280 = internal constant [186 x i8] c"\80\04\95\AF\00\00\00\00\00\00\00\8C\08builtins\94\8C\0DOverflowError\94\93\94)\8C\09int_power\94\8C{/home/runner/.cache/pypoetry/virtualenvs/example-module-R0WrUW6g-py3.9/lib/python3.9/site-packages/numba/cpython/numbers.py\94K\DE\87\94\87\94."
+@.const.pickledata.140610863249280.sha1 = internal constant [20 x i8] c"y\DA\E5\0E\F4\D6%f\1E\D2\E7\0D\B3\F2\C3\BC\8FW\B1\0B"
 @_ZN08NumbaEnv14example_module7example18new_array_functionB2v3B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj11ol_np_zeros12_3clocals_3e4implB2v4B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEi17class_28uint32_29 = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj11ol_np_empty12_3clocals_3e4implB2v5B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEi17class_28uint32_29 = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj15_call_allocatorB2v6B44c8tJTC_2fWQA9wW1DkAz0Pj1skAdT4gkkUlYBZmgA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dEij = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj18_ol_array_allocate12_3clocals_3e4implB2v7B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEN29typeref_5b_3cclass_20_27numba4core5types8npytypes14Array_27_3e_5dEij = common global i8* null
 @_ZN08NumbaEnv5numba2np8arrayobj18ol_array_zero_fill12_3clocals_3e4implB2v8B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE5ArrayIjLi1E1C7mutable7alignedE = common global i8* null
-@.const.picklebuf.140256302155136 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([81 x i8], [81 x i8]* @.const.pickledata.140256302155136, i32 0, i32 0), i32 81, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140256302155136.sha1, i32 0, i32 0) }
-@.const.picklebuf.140256302171904 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([77 x i8], [77 x i8]* @.const.pickledata.140256302171904, i32 0, i32 0), i32 77, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140256302171904.sha1, i32 0, i32 0) }
-@.const.picklebuf.140256302689280 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([137 x i8], [137 x i8]* @.const.pickledata.140256302689280, i32 0, i32 0), i32 137, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140256302689280.sha1, i32 0, i32 0) }
-@.const.picklebuf.140256301269184 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([86 x i8], [86 x i8]* @.const.pickledata.140256301269184, i32 0, i32 0), i32 86, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140256301269184.sha1, i32 0, i32 0) }
-@.const.pickledata.140256301269184 = internal constant [86 x i8] c"\80\04\95K\00\00\00\00\00\00\00\8C\08builtins\94\8C\0BMemoryError\94\93\94\8C'Allocation failed (probably too large).\94\85\94N\87\94."
-@.const.pickledata.140256301269184.sha1 = internal constant [20 x i8] c"\BA(\9D\81\F0\\p \F3G|\15sH\04\DFe\AB\E2\09"
-@.const.pickledata.140256302689280 = internal constant [137 x i8] c"\80\04\95~\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C[array is too big; `arr.size * arr.dtype.itemsize` is larger than the maximum possible size.\94\85\94N\87\94."
-@.const.pickledata.140256302689280.sha1 = internal constant [20 x i8] c"X\E1N\CC\B5\07\B1\E0 i\81t\02#\E6\85\CB\8C<W"
-@.const.pickledata.140256302171904 = internal constant [77 x i8] c"\80\04\95B\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C\1Fnegative dimensions not allowed\94\85\94N\87\94."
-@.const.pickledata.140256302171904.sha1 = internal constant [20 x i8] c"3\1B\85c\BD\B9\DA\C8\1B8B\22s\05,Ho\C1pk"
-@.const.pickledata.140256302155136 = internal constant [81 x i8] c"\80\04\95F\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C#Cannot safely convert value to intp\94\85\94N\87\94."
-@.const.pickledata.140256302155136.sha1 = internal constant [20 x i8] c"M\D0\A5\17S\C7\DCs\85\B2u\D9R\BDR\D8\A29\C2\FF"
+@.const.picklebuf.140610863224576 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([81 x i8], [81 x i8]* @.const.pickledata.140610863224576, i32 0, i32 0), i32 81, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140610863224576.sha1, i32 0, i32 0) }
+@.const.picklebuf.140610863249536 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([77 x i8], [77 x i8]* @.const.pickledata.140610863249536, i32 0, i32 0), i32 77, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140610863249536.sha1, i32 0, i32 0) }
+@.const.picklebuf.140610863754368 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([137 x i8], [137 x i8]* @.const.pickledata.140610863754368, i32 0, i32 0), i32 137, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140610863754368.sha1, i32 0, i32 0) }
+@.const.picklebuf.140610862743808 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([86 x i8], [86 x i8]* @.const.pickledata.140610862743808, i32 0, i32 0), i32 86, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.140610862743808.sha1, i32 0, i32 0) }
+@.const.pickledata.140610862743808 = internal constant [86 x i8] c"\80\04\95K\00\00\00\00\00\00\00\8C\08builtins\94\8C\0BMemoryError\94\93\94\8C'Allocation failed (probably too large).\94\85\94N\87\94."
+@.const.pickledata.140610862743808.sha1 = internal constant [20 x i8] c"\BA(\9D\81\F0\\p \F3G|\15sH\04\DFe\AB\E2\09"
+@.const.pickledata.140610863754368 = internal constant [137 x i8] c"\80\04\95~\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C[array is too big; `arr.size * arr.dtype.itemsize` is larger than the maximum possible size.\94\85\94N\87\94."
+@.const.pickledata.140610863754368.sha1 = internal constant [20 x i8] c"X\E1N\CC\B5\07\B1\E0 i\81t\02#\E6\85\CB\8C<W"
+@.const.pickledata.140610863249536 = internal constant [77 x i8] c"\80\04\95B\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C\1Fnegative dimensions not allowed\94\85\94N\87\94."
+@.const.pickledata.140610863249536.sha1 = internal constant [20 x i8] c"3\1B\85c\BD\B9\DA\C8\1B8B\22s\05,Ho\C1pk"
+@.const.pickledata.140610863224576 = internal constant [81 x i8] c"\80\04\95F\00\00\00\00\00\00\00\8C\08builtins\94\8C\0AValueError\94\93\94\8C#Cannot safely convert value to intp\94\85\94N\87\94."
+@.const.pickledata.140610863224576.sha1 = internal constant [20 x i8] c"M\D0\A5\17S\C7\DCs\85\B2u\D9R\BDR\D8\A29\C2\FF"
 @_ZN08NumbaEnv14example_module7example21modify_array_functionB2v9B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE5ArrayIjLi1E1C7mutable7alignedE = common global i8* null
 @_ZN08NumbaEnv14example_module7example30modify_array_in_place_functionB3v10B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE5ArrayIjLi1E1C7mutable7alignedE = common global i8* null
 @_ZN08NumbaEnv14example_module7example29new_and_modify_array_functionB3v11B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE = common global i8* null
-@numba.dynamic.globals.7f8ff70b7860 = linkonce global i8* inttoptr (i32 -150243232 to i8*)
-@numba.dynamic.globals.7f8ff6f322c0 = linkonce global i8* inttoptr (i32 -151838016 to i8*)
+@numba.dynamic.globals.7fe28487aa40 = linkonce global i8* inttoptr (i32 -2071483840 to i8*)
+@numba.dynamic.globals.7fe2846fa9a0 = linkonce global i8* inttoptr (i32 -2073056864 to i8*)
+@_ZN08NumbaEnv14example_module7example34specially_named_new_array_functionB3v12B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE = common global i8* null
 
 define i32 @_ZN14example_module7example6squareB2v1B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEd(double* noalias nocapture %retptr, { i8*, i32, i8* }** noalias nocapture %excinfo, double %arg.input_value) {
 entry:
@@ -90,12 +91,12 @@ entry:
   store i1 false, i1* %invert.2, align 1
   %exp.3 = alloca i64, align 8
   store i64 0, i64* %exp.3, align 8
-  %a.1.2 = alloca double, align 8
-  store double 0.000000e+00, double* %a.1.2, align 8
-  %r.2 = alloca double, align 8
-  store double 0.000000e+00, double* %r.2, align 8
   %exp.4 = alloca i64, align 8
   store i64 0, i64* %exp.4, align 8
+  %r.2 = alloca double, align 8
+  store double 0.000000e+00, double* %r.2, align 8
+  %a.1.2 = alloca double, align 8
+  store double 0.000000e+00, double* %a.1.2, align 8
   %r.3 = alloca double, align 8
   store double 0.000000e+00, double* %r.3, align 8
   store i32 %arg.b, i32* %b, align 4
@@ -132,7 +133,7 @@ B44:                                              ; preds = %B26
   store i32 0, i32* %b, align 4
   %.39 = load double, double* %a.1, align 8
   store double 0.000000e+00, double* %a.1, align 8
-  store { i8*, i32, i8* }* @.const.picklebuf.140256302171648, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140610863249280, { i8*, i32, i8* }** %excinfo, align 8
   store i32 0, i32* %try_state, align 4
   %.44 = load i32, i32* %try_state, align 4
   %.46 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
@@ -161,17 +162,17 @@ B98:                                              ; preds = %entry
   br label %B106
 
 B106:                                             ; preds = %B98, %B48
-  %.68 = load double, double* %a.1, align 8
-  %.70 = load double, double* %a.1.2, align 8
-  store double %.68, double* %a.1.2, align 8
+  %.68 = load i64, i64* %exp.3, align 8
+  %.70 = load i64, i64* %exp.4, align 8
+  store i64 %.68, i64* %exp.4, align 8
   %.72 = load double, double* %r, align 8
   %.74 = load double, double* %r.2, align 8
   store double %.72, double* %r.2, align 8
   %.76 = load double, double* %r, align 8
   store double 0.000000e+00, double* %r, align 8
-  %.78 = load i64, i64* %exp.3, align 8
-  %.80 = load i64, i64* %exp.4, align 8
-  store i64 %.78, i64* %exp.4, align 8
+  %.78 = load double, double* %a.1, align 8
+  %.80 = load double, double* %a.1.2, align 8
+  store double %.78, double* %a.1.2, align 8
   %.82 = load i64, i64* %exp.3, align 8
   %.83 = sext i32 65536 to i64
   %.84 = icmp sgt i64 %.82, %.83
@@ -259,7 +260,7 @@ B184:                                             ; preds = %B172
   ret i32 0
 
 B176.if:                                          ; preds = %B176
-  store { i8*, i32, i8* }* @.const.picklebuf.140256302687744, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140610863752960, { i8*, i32, i8* }** %excinfo, align 8
   %.159 = load i32, i32* %try_state, align 4
   %.161 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
@@ -727,7 +728,7 @@ entry:
   br i1 %.6, label %B0.if, label %B0.endif, !prof !0
 
 B0.if:                                            ; preds = %entry
-  store { i8*, i32, i8* }* @.const.picklebuf.140256302155136, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140610863224576, { i8*, i32, i8* }** %excinfo, align 8
   store i32 0, i32* %try_state, align 4
   %.11 = load i32, i32* %try_state, align 4
   %.13 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
@@ -738,7 +739,7 @@ B0.endif:                                         ; preds = %entry
   br i1 %.15, label %B0.endif.if, label %B0.endif.endif, !prof !0
 
 B0.endif.if:                                      ; preds = %B0.endif
-  store { i8*, i32, i8* }* @.const.picklebuf.140256302171904, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140610863249536, { i8*, i32, i8* }** %excinfo, align 8
   %.18 = load i32, i32* %try_state, align 4
   %.20 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
@@ -756,7 +757,7 @@ B0.endif.endif:                                   ; preds = %B0.endif
   br i1 %.32, label %B0.endif.endif.if, label %B0.endif.endif.endif, !prof !0
 
 B0.endif.endif.if:                                ; preds = %B0.endif.endif
-  store { i8*, i32, i8* }* @.const.picklebuf.140256302689280, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* @.const.picklebuf.140610863754368, { i8*, i32, i8* }** %excinfo, align 8
   %.35 = load i32, i32* %try_state, align 4
   %.37 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   ret i32 1, !ret_is_raise !1
@@ -781,7 +782,7 @@ B0.endif.endif.endif:                             ; preds = %B0.endif.endif
   br i1 %.8.i.i, label %B0.if.i.i, label %B0.endif.i.i, !prof !0
 
 B0.if.i.i:                                        ; preds = %B0.endif.endif.endif
-  store { i8*, i32, i8* }* @.const.picklebuf.140256301269184, { i8*, i32, i8* }** %excinfo.1.i, align 8, !alias.scope !14, !noalias !15
+  store { i8*, i32, i8* }* @.const.picklebuf.140610862743808, { i8*, i32, i8* }** %excinfo.1.i, align 8, !alias.scope !14, !noalias !15
   store i32 0, i32* %try_state.i.i, align 4, !noalias !10
   %.13.i.i = load i32, i32* %try_state.i.i, align 4, !noalias !10
   %.15.i.i = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo.1.i, align 8, !alias.scope !14, !noalias !15
@@ -1337,7 +1338,7 @@ entry:
   store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.43, align 8
   %excinfo.2 = alloca { i8*, i32, i8* }*, align 8
   store { i8*, i32, i8* }* null, { i8*, i32, i8* }** %excinfo.2, align 8
-  %.4 = load i8*, i8** @numba.dynamic.globals.7f8ff70b7860, align 8
+  %.4 = load i8*, i8** @numba.dynamic.globals.7fe28487aa40, align 8
   store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.5, align 8
   %.9 = call i32 @_ZN14example_module7example18new_array_functionB2v3B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE({ i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.5, { i8*, i32, i8* }** %excinfo.1)
   %.10 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo.1, align 8
@@ -1378,7 +1379,7 @@ B0.if:                                            ; preds = %entry
   br i1 %.38, label %B0.if.if, label %B0.endif
 
 B0.endif:                                         ; preds = %B0.if, %entry
-  %.42 = load i8*, i8** @numba.dynamic.globals.7f8ff6f322c0, align 8
+  %.42 = load i8*, i8** @numba.dynamic.globals.7fe2846fa9a0, align 8
   store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.43, align 8
   %extracted.meminfo = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 0
   %extracted.parent = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 1
@@ -1491,6 +1492,287 @@ entry:
   %excinfo = alloca { i8*, i32, i8* }*, align 8
   store { i8*, i32, i8* }* null, { i8*, i32, i8* }** %excinfo, align 8
   %.6 = call i32 @_ZN14example_module7example29new_and_modify_array_functionB3v11B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE({ i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.2, { i8*, i32, i8* }** %excinfo) #1
+  %.7 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
+  %.8 = icmp eq i32 %.6, 0
+  %.9 = icmp eq i32 %.6, -2
+  %.12 = or i1 %.8, %.9
+  %.13 = xor i1 %.12, true
+  %.14 = icmp sge i32 %.6, 1
+  %.15 = select i1 %.14, { i8*, i32, i8* }* %.7, { i8*, i32, i8* }* undef
+  %.16 = load { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.2, align 8
+  %.17 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 0
+  %.18 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 1
+  %.19 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 2
+  %.20 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 3
+  %.21 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 4
+  %.22 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 5
+  %.23 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.16, 6
+  %inserted.meminfo = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } undef, i8* %.17, 0
+  %inserted.parent = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.meminfo, i8* %.18, 1
+  %inserted.nitems = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.parent, i32 %.19, 2
+  %inserted.itemsize = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.nitems, i32 %.20, 3
+  %inserted.data = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.itemsize, i32* %.21, 4
+  %.24 = extractvalue [1 x i32] %.22, 0
+  %.25 = insertvalue [1 x i32] undef, i32 %.24, 0
+  %inserted.shape = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.data, [1 x i32] %.25, 5
+  %.26 = extractvalue [1 x i32] %.23, 0
+  %.27 = insertvalue [1 x i32] undef, i32 %.26, 0
+  %inserted.strides = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.shape, [1 x i32] %.27, 6
+  %.28 = getelementptr { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* null, i32 1
+  %.29 = ptrtoint { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.28 to i32
+  %.30 = add i32 %.29, 4
+  %.31 = call i8* @malloc(i32 %.30)
+  %.32 = bitcast i8* %.31 to { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }*
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.32, align 8
+  ret { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.32
+}
+
+define i32 @_ZN14example_module7example34specially_named_new_array_functionB3v12B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE({ i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* noalias nocapture %retptr, { i8*, i32, i8* }** noalias nocapture %excinfo) {
+entry:
+  %.4 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.4, align 8
+  %excinfo.1 = alloca { i8*, i32, i8* }*, align 8
+  store { i8*, i32, i8* }* null, { i8*, i32, i8* }** %excinfo.1, align 8
+  %try_state = alloca i32, align 4
+  store i32 0, i32* %try_state, align 4
+  %.41 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, align 8
+  %.70 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, align 8
+  %.99 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, align 8
+  %.128 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, align 8
+  %.157 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.4, align 8
+  %.8 = call i32 @_ZN5numba2np8arrayobj11ol_np_zeros12_3clocals_3e4implB2v4B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dEi17class_28uint32_29({ i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.4, { i8*, i32, i8* }** %excinfo.1, i32 5, i8* null)
+  %.9 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo.1, align 8
+  %.10 = icmp eq i32 %.8, 0
+  %.11 = icmp eq i32 %.8, -2
+  %.14 = or i1 %.10, %.11
+  %.15 = xor i1 %.14, true
+  %.16 = icmp sge i32 %.8, 1
+  %.17 = select i1 %.16, { i8*, i32, i8* }* %.9, { i8*, i32, i8* }* undef
+  %.18 = load { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.4, align 8
+  %.19 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 0
+  %.20 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 1
+  %.21 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 2
+  %.22 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 3
+  %.23 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 4
+  %.24 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 5
+  %.25 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.18, 6
+  %inserted.meminfo = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } undef, i8* %.19, 0
+  %inserted.parent = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.meminfo, i8* %.20, 1
+  %inserted.nitems = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.parent, i32 %.21, 2
+  %inserted.itemsize = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.nitems, i32 %.22, 3
+  %inserted.data = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.itemsize, i32* %.23, 4
+  %.26 = extractvalue [1 x i32] %.24, 0
+  %.27 = insertvalue [1 x i32] undef, i32 %.26, 0
+  %inserted.shape = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.data, [1 x i32] %.27, 5
+  %.28 = extractvalue [1 x i32] %.25, 0
+  %.29 = insertvalue [1 x i32] undef, i32 %.28, 0
+  %inserted.strides = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.shape, [1 x i32] %.29, 6
+  br i1 %.15, label %B0.if, label %B0.endif, !prof !0
+
+B0.if:                                            ; preds = %entry
+  store i32 0, i32* %try_state, align 4
+  %.33 = load i32, i32* %try_state, align 4
+  %.34 = icmp ugt i32 %.33, 0
+  %.35 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
+  store { i8*, i32, i8* }* %.17, { i8*, i32, i8* }** %excinfo, align 8
+  %.37 = xor i1 %.34, true
+  br i1 %.37, label %B0.if.if, label %B0.endif
+
+B0.endif:                                         ; preds = %B0.if, %entry
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, align 8
+  %.45 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, i32 0, i32 5
+  %.461 = bitcast [1 x i32]* %.45 to i32*
+  %.47 = load i32, i32* %.461, align 4, !range !2
+  %.48 = insertvalue [1 x i32] undef, i32 %.47, 0
+  %.49 = extractvalue [1 x i32] %.48, 0
+  %.50 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, i32 0, i32 6
+  %.51 = load [1 x i32], [1 x i32]* %.50, align 4
+  %.52 = extractvalue [1 x i32] %.51, 0
+  %.53 = icmp slt i32 0, 0
+  %.54 = add i32 0, %.49
+  %.55 = select i1 %.53, i32 %.54, i32 0
+  %.56 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, i32 0, i32 5
+  %.572 = bitcast [1 x i32]* %.56 to i32*
+  %.58 = load i32, i32* %.572, align 4, !range !2
+  %.59 = insertvalue [1 x i32] undef, i32 %.58, 0
+  %.60 = extractvalue [1 x i32] %.59, 0
+  %.61 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, i32 0, i32 6
+  %.62 = load [1 x i32], [1 x i32]* %.61, align 4
+  %.63 = extractvalue [1 x i32] %.62, 0
+  %.64 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.41, i32 0, i32 4
+  %.65 = load i32*, i32** %.64, align 8
+  %.66 = mul i32 %.55, 1
+  %.67 = add i32 0, %.66
+  %.68 = getelementptr i32, i32* %.65, i32 %.67
+  store i32 12345, i32* %.68, align 4
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, align 8
+  %.74 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, i32 0, i32 5
+  %.753 = bitcast [1 x i32]* %.74 to i32*
+  %.76 = load i32, i32* %.753, align 4, !range !2
+  %.77 = insertvalue [1 x i32] undef, i32 %.76, 0
+  %.78 = extractvalue [1 x i32] %.77, 0
+  %.79 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, i32 0, i32 6
+  %.80 = load [1 x i32], [1 x i32]* %.79, align 4
+  %.81 = extractvalue [1 x i32] %.80, 0
+  %.82 = icmp slt i32 1, 0
+  %.83 = add i32 1, %.78
+  %.84 = select i1 %.82, i32 %.83, i32 1
+  %.85 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, i32 0, i32 5
+  %.864 = bitcast [1 x i32]* %.85 to i32*
+  %.87 = load i32, i32* %.864, align 4, !range !2
+  %.88 = insertvalue [1 x i32] undef, i32 %.87, 0
+  %.89 = extractvalue [1 x i32] %.88, 0
+  %.90 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, i32 0, i32 6
+  %.91 = load [1 x i32], [1 x i32]* %.90, align 4
+  %.92 = extractvalue [1 x i32] %.91, 0
+  %.93 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.70, i32 0, i32 4
+  %.94 = load i32*, i32** %.93, align 8
+  %.95 = mul i32 %.84, 1
+  %.96 = add i32 0, %.95
+  %.97 = getelementptr i32, i32* %.94, i32 %.96
+  store i32 23451, i32* %.97, align 4
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, align 8
+  %.103 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, i32 0, i32 5
+  %.1045 = bitcast [1 x i32]* %.103 to i32*
+  %.105 = load i32, i32* %.1045, align 4, !range !2
+  %.106 = insertvalue [1 x i32] undef, i32 %.105, 0
+  %.107 = extractvalue [1 x i32] %.106, 0
+  %.108 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, i32 0, i32 6
+  %.109 = load [1 x i32], [1 x i32]* %.108, align 4
+  %.110 = extractvalue [1 x i32] %.109, 0
+  %.111 = icmp slt i32 2, 0
+  %.112 = add i32 2, %.107
+  %.113 = select i1 %.111, i32 %.112, i32 2
+  %.114 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, i32 0, i32 5
+  %.1156 = bitcast [1 x i32]* %.114 to i32*
+  %.116 = load i32, i32* %.1156, align 4, !range !2
+  %.117 = insertvalue [1 x i32] undef, i32 %.116, 0
+  %.118 = extractvalue [1 x i32] %.117, 0
+  %.119 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, i32 0, i32 6
+  %.120 = load [1 x i32], [1 x i32]* %.119, align 4
+  %.121 = extractvalue [1 x i32] %.120, 0
+  %.122 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.99, i32 0, i32 4
+  %.123 = load i32*, i32** %.122, align 8
+  %.124 = mul i32 %.113, 1
+  %.125 = add i32 0, %.124
+  %.126 = getelementptr i32, i32* %.123, i32 %.125
+  store i32 34512, i32* %.126, align 4
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, align 8
+  %.132 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, i32 0, i32 5
+  %.1337 = bitcast [1 x i32]* %.132 to i32*
+  %.134 = load i32, i32* %.1337, align 4, !range !2
+  %.135 = insertvalue [1 x i32] undef, i32 %.134, 0
+  %.136 = extractvalue [1 x i32] %.135, 0
+  %.137 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, i32 0, i32 6
+  %.138 = load [1 x i32], [1 x i32]* %.137, align 4
+  %.139 = extractvalue [1 x i32] %.138, 0
+  %.140 = icmp slt i32 3, 0
+  %.141 = add i32 3, %.136
+  %.142 = select i1 %.140, i32 %.141, i32 3
+  %.143 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, i32 0, i32 5
+  %.1448 = bitcast [1 x i32]* %.143 to i32*
+  %.145 = load i32, i32* %.1448, align 4, !range !2
+  %.146 = insertvalue [1 x i32] undef, i32 %.145, 0
+  %.147 = extractvalue [1 x i32] %.146, 0
+  %.148 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, i32 0, i32 6
+  %.149 = load [1 x i32], [1 x i32]* %.148, align 4
+  %.150 = extractvalue [1 x i32] %.149, 0
+  %.151 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.128, i32 0, i32 4
+  %.152 = load i32*, i32** %.151, align 8
+  %.153 = mul i32 %.142, 1
+  %.154 = add i32 0, %.153
+  %.155 = getelementptr i32, i32* %.152, i32 %.154
+  store i32 45123, i32* %.155, align 4
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, align 8
+  %.161 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, i32 0, i32 5
+  %.1629 = bitcast [1 x i32]* %.161 to i32*
+  %.163 = load i32, i32* %.1629, align 4, !range !2
+  %.164 = insertvalue [1 x i32] undef, i32 %.163, 0
+  %.165 = extractvalue [1 x i32] %.164, 0
+  %.166 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, i32 0, i32 6
+  %.167 = load [1 x i32], [1 x i32]* %.166, align 4
+  %.168 = extractvalue [1 x i32] %.167, 0
+  %.169 = icmp slt i32 4, 0
+  %.170 = add i32 4, %.165
+  %.171 = select i1 %.169, i32 %.170, i32 4
+  %.172 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, i32 0, i32 5
+  %.17310 = bitcast [1 x i32]* %.172 to i32*
+  %.174 = load i32, i32* %.17310, align 4, !range !2
+  %.175 = insertvalue [1 x i32] undef, i32 %.174, 0
+  %.176 = extractvalue [1 x i32] %.175, 0
+  %.177 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, i32 0, i32 6
+  %.178 = load [1 x i32], [1 x i32]* %.177, align 4
+  %.179 = extractvalue [1 x i32] %.178, 0
+  %.180 = getelementptr inbounds { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.157, i32 0, i32 4
+  %.181 = load i32*, i32** %.180, align 8
+  %.182 = mul i32 %.171, 1
+  %.183 = add i32 0, %.182
+  %.184 = getelementptr i32, i32* %.181, i32 %.183
+  store i32 51234, i32* %.184, align 4
+  %extracted.meminfo = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 0
+  %extracted.parent = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 1
+  %extracted.nitems = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 2
+  %extracted.itemsize = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 3
+  %extracted.data = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 4
+  %extracted.shape = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 5
+  %.186 = extractvalue [1 x i32] %extracted.shape, 0
+  %extracted.strides = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 6
+  %.187 = extractvalue [1 x i32] %extracted.strides, 0
+  call void @NRT_incref(i8* %extracted.meminfo)
+  %extracted.meminfo.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 0
+  %extracted.parent.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 1
+  %extracted.nitems.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 2
+  %extracted.itemsize.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 3
+  %extracted.data.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 4
+  %extracted.shape.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 5
+  %.189 = extractvalue [1 x i32] %extracted.shape.1, 0
+  %extracted.strides.1 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 6
+  %.190 = extractvalue [1 x i32] %extracted.strides.1, 0
+  %extracted.meminfo.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 0
+  %extracted.parent.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 1
+  %extracted.nitems.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 2
+  %extracted.itemsize.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 3
+  %extracted.data.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 4
+  %extracted.shape.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 5
+  %.192 = extractvalue [1 x i32] %extracted.shape.2, 0
+  %.193 = insertvalue [1 x i32] undef, i32 %.192, 0
+  %extracted.strides.2 = extractvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %inserted.strides, 6
+  %.194 = extractvalue [1 x i32] %extracted.strides.2, 0
+  %.195 = insertvalue [1 x i32] undef, i32 %.194, 0
+  %.196 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } undef, i8* %extracted.meminfo.2, 0
+  %.197 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.196, i8* %extracted.parent.2, 1
+  %.198 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.197, i32 %extracted.nitems.2, 2
+  %.199 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.198, i32 %extracted.itemsize.2, 3
+  %.200 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.199, i32* %extracted.data.2, 4
+  %.201 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.200, [1 x i32] %.193, 5
+  %.202 = insertvalue { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.201, [1 x i32] %.195, 6
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } %.202, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %retptr, align 8
+  call void @NRT_decref(i8* %extracted.meminfo.1)
+  ret i32 0
+
+B0.if.if:                                         ; preds = %B0.if
+  ret i32 %.8, !ret_is_raise !1
+}
+
+define { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* @specially_named_new_array_function() {
+entry:
+  %.2 = alloca { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.2, align 8
+  store { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] } zeroinitializer, { i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.2, align 8
+  %excinfo = alloca { i8*, i32, i8* }*, align 8
+  store { i8*, i32, i8* }* null, { i8*, i32, i8* }** %excinfo, align 8
+  %.6 = call i32 @_ZN14example_module7example34specially_named_new_array_functionB3v12B42c8tJTIcFHzwl2ILiXkcBV0KBSmNGHkyiCKJEEwA_3dE({ i8*, i8*, i32, i32, i32*, [1 x i32], [1 x i32] }* %.2, { i8*, i32, i8* }** %excinfo) #1
   %.7 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
   %.8 = icmp eq i32 %.6, 0
   %.9 = icmp eq i32 %.6, -2
