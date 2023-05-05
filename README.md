@@ -5,6 +5,7 @@ Example of compiling numba functions to wasm for use in JS or alongside pyodide
 ## This repository contains two python packages set up with poetry:
 
 ### [numba_wasm](./numba_wasm/) - A very basic library that provides compilation to and interfacing with WebAssembly.
+
 The library provides a custom @njit_wasm decorator that handles both compiling to wasm and interfacing between pyodide and the wasm compiled functions.
 
 When called from a regular interpreter, the decorator acts mostly the same as the traditional numba.njit, with the exception that it infers the function signature from type annotations rather than relying on it being explicitly declared. This allows easier testing of compiled functions as you do not need to compile to wasm and test in a pyodide environment to test simple things like logic.
@@ -16,6 +17,7 @@ When called from a pyodide interpreter, the decorator ignores the actual content
 The combination of these three different functionalities allows the same module that contains your code to be used for local testing, compilation, and use within pyodide itself.
 
 ### [example_module](./example_module/) - An incredibly simple example library containing basic functions to be compiled to WebAssembly via numba_wasm.
+
 The library provides basic functions marked with the @njit_wasm decorator to test arithmetic and array creation/modification
 
 It also contains the aforementoned [build_numba_functions.py](./example_module/build_numba_functions.py) script used to generate and export LLVM IR for the functions.

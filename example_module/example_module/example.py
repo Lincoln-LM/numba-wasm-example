@@ -33,6 +33,13 @@ def modify_array_function(
 
 
 @njit_wasm
+def modify_array_in_place_function(input_array: np.ndarray[1, np.uint32]):
+    """Basic in-place array modification function example"""
+    # arbitrary scalar multiplication
+    input_array *= np.uint32(2)
+
+
+@njit_wasm
 def new_and_modify_array_function() -> np.ndarray[1, np.uint32]:
     """Basic array creation and modification function example
     which calls previously defined functions"""

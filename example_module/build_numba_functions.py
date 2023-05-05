@@ -9,6 +9,7 @@ from example_module import (  # noqa: E402
     square,
     new_array_function,
     modify_array_function,
+    modify_array_in_place_function,
     new_and_modify_array_function,
 )
 
@@ -23,6 +24,7 @@ with open("example_module.ll", "w+", encoding="utf-8") as out_file:
                 square,
                 new_array_function,
                 modify_array_function,
+                modify_array_in_place_function,
                 new_and_modify_array_function,
             )
         )

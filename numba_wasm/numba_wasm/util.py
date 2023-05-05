@@ -75,7 +75,7 @@ def njit_wasm(function=None, **kwargs):
         if sys.platform != "emscripten" or BUILD_WASM_IR:
             # infer signature from annotations
             function_annotations = copy(func.__annotations__)
-            return_type = as_numba_type(function_annotations.pop("return"))
+            return_type = as_numba_type(function_annotations.pop("return", numba.void))
             argument_types = (
                 as_numba_type(value) for value in function_annotations.values()
             )
@@ -177,7 +177,7 @@ def wasm_function(func):
     dimensions and item type.
 
     For example, a 2d array of float64 must be declared as np.ndarray[2, np.float64]."""
-    return_type = func.__annotations__["return"]
+    return_type = func.__annotations__.get("return", np.void0)
     # functions that return arrays must have the ndarray created from the returned pointer
     if return_type.__name__ == "ndarray":
 
