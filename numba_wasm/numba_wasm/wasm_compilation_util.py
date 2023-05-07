@@ -96,20 +96,6 @@ class WASMContext(CPUContext):
     def __init__(self, typingctx, target="cpu"):
         super().__init__(typingctx, target)
 
-    def get_executable(self, library, fndesc, env):
-        # This function is not intended to be called within the compilation environment
-        # function pointer can be 0 to avoid attempting to generate code to run in this env
-        fnptr = 0
-
-        return _dynfunc.make_function(
-            fndesc.lookup_module(),
-            fndesc.qualname.split(".")[-1],
-            "compiled wrapper for %r" % (fndesc.qualname,),
-            fnptr,
-            env,
-            (library,),
-        )
-
     def create_cfunc_wrapper(self, library, fndesc, _env, _call_helper):
         """Custom cfunc wrapper for generating WASM/JS-accessible functions"""
 
