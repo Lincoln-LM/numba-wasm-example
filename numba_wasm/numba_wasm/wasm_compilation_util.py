@@ -6,6 +6,7 @@ from functools import partial, cached_property
 from inspect import getmodule
 
 import numba
+from numba import _dynfunc
 from llvmlite import ir
 from numba.core import codegen, config, runtime, types, utils, compiler_lock
 from numba.core.cpu import cgutils, CPUContext
@@ -95,6 +96,20 @@ class WASMContext(CPUContext):
     def __init__(self, typingctx, target="cpu"):
         super().__init__(typingctx, target)
 
+    def get_executable(self, library, fndesc, env):
+        # This function is not intended to be called within the compilation environment
+        # function pointer can be 0 to avoid attempting to generate code to run in this env
+        fnptr = 0
+
+        return _dynfunc.make_function(
+            fndesc.lookup_module(),
+            fndesc.qualname.split(".")[-1],
+            "compiled wrapper for %r" % (fndesc.qualname,),
+            fnptr,
+            env,
+            (library,),
+        )
+
     def create_cfunc_wrapper(self, library, fndesc, _env, _call_helper):
         """Custom cfunc wrapper for generating WASM/JS-accessible functions"""
 
@@ -113,7 +128,11 @@ class WASMContext(CPUContext):
                 ll_argtypes.append(self.get_value_type(arg_type))
                 arg_pointer_flags.append(False)
 
-        ll_return_type = self.get_value_type(fndesc.restype)
+        ll_return_type = (
+            ir.VoidType()
+            if fndesc.restype is numba.types.void
+            else self.get_value_type(fndesc.restype)
+        )
 
         returns_array = isinstance(fndesc.restype, numba.core.types.npytypes.Array)
         # If the function returns an array, it must be returned as a pointer
@@ -166,6 +185,8 @@ class WASMContext(CPUContext):
             pointer = builder.bitcast(pointer_int8, ll_return_type)
             builder.store(result, pointer)
             builder.ret(pointer)
+        elif fndesc.restype == numba.types.none:
+            builder.ret_void()
         else:
             builder.ret(result)
 
