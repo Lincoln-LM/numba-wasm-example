@@ -15,6 +15,9 @@ if sys.platform == "emscripten" and not BUILD_WASM_IR:
 else:
     import numba
     from numba.core.typing.asnumbatype import as_numba_type as _as_numba_type
+    from numba.extending import intrinsic
+    from numba.core.externals import _add_missing_symbol
+    from llvmlite import ir
 
     js = None
 
@@ -242,3 +245,53 @@ def wasm_function(function=None, symbol=None):
         # @wasm_function
         # def foo()
         return wrapper(function)
+
+
+def global_variable(name: str, initial_value, inital_value_type):
+    """Create a global variable and return the compiled getter, setter, and specification"""
+    if sys.platform == "emscripten" and not BUILD_WASM_IR:
+        return (lambda: None), (lambda x: None), None
+    # dummy symbol, not actually meant to be accessed prior to compilation
+    _add_missing_symbol(name, 1)
+
+    numba_initial_value_type = as_numba_type(inital_value_type)
+
+    @intrinsic
+    def global_variable_getter(typing_ctx):
+        ll_initial_value_type = WASMContext(typing_ctx).get_value_type(
+            numba_initial_value_type
+        )
+
+        def codegen(_context, builder: ir.IRBuilder, _signature, _args):
+            if name in builder.module.globals:
+                global_variable_ptr = builder.module.get_global(name)
+            else:
+                global_variable_ptr = ir.GlobalVariable(
+                    builder.module, ll_initial_value_type, name
+                )
+            return builder.load(global_variable_ptr)
+
+        return numba_initial_value_type(), codegen
+
+    @intrinsic
+    def global_variable_setter(typing_ctx, global_variable_value):
+        ll_initial_value_type = WASMContext(typing_ctx).get_value_type(
+            numba_initial_value_type
+        )
+
+        def codegen(_context, builder: ir.IRBuilder, _signature, args):
+            if name in builder.module.globals:
+                global_variable_ptr = builder.module.get_global(name)
+            else:
+                global_variable_ptr = ir.GlobalVariable(
+                    builder.module, ll_initial_value_type, name
+                )
+            builder.store(args[0], global_variable_ptr)
+
+        return numba.none(numba_initial_value_type), codegen
+
+    return (
+        global_variable_getter,
+        global_variable_setter,
+        (name, numba_initial_value_type, initial_value),
+    )

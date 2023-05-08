@@ -1,7 +1,11 @@
 """Example numba-compiled functions"""
 
 import numpy as np
-from numba_wasm.util import njit_wasm
+from numba_wasm.util import njit_wasm, global_variable
+
+global_counter_getter, global_counter_setter, global_counter_spec = global_variable(
+    "global_counter", 0, np.uint32
+)
 
 
 @njit_wasm
@@ -58,3 +62,15 @@ def specially_named_new_array_function() -> np.ndarray[1, np.uint32]:
     array[3] = 45123
     array[4] = 51234
     return array
+
+
+@njit_wasm
+def increment_global_counter_function():
+    """Function that increments the global variable ``global_counter``"""
+    global_counter_setter(global_counter_getter() + 1)
+
+
+@njit_wasm
+def get_global_counter() -> np.uint32:
+    """Function that returns the global variable ``global_counter``"""
+    return global_counter_getter()

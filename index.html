@@ -70,6 +70,11 @@
         pyodide.runPython(
           'print(f"{example_module.specially_named_new_array_function()=}")'
         );
+        pyodide.runPython('print(f"{example_module.get_global_counter()=}")');
+        pyodide.runPython(
+          'print(f"{example_module.increment_global_counter_function()=}")'
+        );
+        pyodide.runPython('print(f"{example_module.get_global_counter()=}")');
       });
     </script>
   </body>
