@@ -6,9 +6,9 @@ from functools import partial, cached_property
 from inspect import getmodule
 
 import numba
-from numba import _dynfunc
 from llvmlite import ir
 from numba.core import codegen, config, runtime, types, utils, compiler_lock
+from numba.core import typing as numba_typing
 from numba.core.cpu import cgutils, CPUContext
 from numba.core.registry import CPUTarget, CPUDispatcher
 from numba.core.target_extension import (
@@ -215,11 +215,21 @@ jit_registry[WASM] = jit
 
 
 @compiler_lock.global_compiler_lock
-def build_wasm_ir_module(njit_functions: tuple) -> str:
+def build_wasm_ir_module(njit_functions: tuple, global_variables: tuple = None) -> str:
     """Build a WASM-compatible ir module from list of njit functions"""
     library = codegen.JITCPUCodegen("function_library").create_library(
         "function_library"
     )
+
+    if global_variables is not None:
+        context = WASMContext(numba_typing.Context())
+        global_variable_module = ir.Module("global_variables")
+        for name, numba_type, value in global_variables:
+            ll_type = context.get_value_type(numba_type)
+            global_variable = ir.GlobalVariable(global_variable_module, ll_type, name)
+            global_variable.initializer = ll_type(value)
+        library.add_ir_module(global_variable_module)
+
     for function in njit_functions:
         # assume only 1 signature
         function_module = tuple(function.overloads.values())[0].library._final_module
